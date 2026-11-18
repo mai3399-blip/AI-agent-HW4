@@ -467,3 +467,16 @@ When finished, summarize the files created, explain the notebook sections, and i
 The notebook will later be opened from GitHub using Google Colab's **File → Open notebook → GitHub** workflow.
 
 Keep the implementation simple, readable, and faithful to the class examples and homework instructions.
+
+
+## Iteration 2 · Gradio usability and readable test results
+
+The follow-up request was to improve the English Gradio experience and simplify the standalone test output while preserving the lecturer’s mandatory architecture, exact test, and existing Supabase data. It also required local validation and review before any Git publication.
+
+Changes made:
+
+- Reorganized the light Gradio layout around the active club, saved conversations, and chat, with responsive controls, a prominent **New conversation** action, and feedback when opening or starting a conversation.
+- Replaced visible thread IDs with club and first-question titles. Labeled the lecturer’s test and used a numbered suffix for duplicate titles. Kept the original thread IDs as dropdown values and continued reading the deduplicated list from PostgreSQL.
+- Preserved chat history when switching clubs and restored the original thread and club when reopening a conversation. Kept empty conversations out of the database and preserved successful replies when the list refresh fails.
+- Kept the exact lecturer test in its own cell. Added preparation and summary cells to suppress the verbose automatic state display and report the actual total message count, change from the baseline, saved club, and expected-state result.
+- Updated the manual testing instructions for the redesigned app and repeated test runs. Gradio shutdown remains manual.
